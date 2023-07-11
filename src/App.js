@@ -11,7 +11,7 @@ function App() {
       <GuestPickerPage />
       <DatePickerPage />
       <RoomPickerPage />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

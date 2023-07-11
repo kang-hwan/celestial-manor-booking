@@ -36,12 +36,21 @@
     }
     .cardSummary {
       display: flex;
-      justify-content: space-evenly;
       align-items: center;
       height: 100%;
       .cardPrice {
         border-right: 1px solid #211f1a;
         background-image: url(../image/gradient-card.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 50%;
+        height: 100%;
+        text-align: center;
+      }
+      .cardBookingCta {
+        width: 50%;
+        height: 100%;
+        text-align: center;
       }
     }
   }

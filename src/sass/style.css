@@ -116,13 +116,22 @@
 }
 .roomCardContainer__body .cardSummary {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   height: 100%;
 }
 .roomCardContainer__body .cardSummary .cardPrice {
   border-right: 1px solid #211f1a;
   background-image: url(../image/gradient-card.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+}
+.roomCardContainer__body .cardSummary .cardBookingCta {
+  width: 50%;
+  height: 100%;
+  text-align: center;
 }
 
 .summaryFontLarge {
@@ -169,7 +178,7 @@ footer {
   align-items: center;
   color: white;
   background-color: black;
-  position: absolute;
+  position: sticky;
   bottom: 0;
 }
 
