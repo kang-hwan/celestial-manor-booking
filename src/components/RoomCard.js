@@ -1,33 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import { roomData } from "../data/roomData";
 
 function RoomCard() {
+  const [selected, setSelected] = useState(null);
+
+  const accordionToggle = (i) => {
+    if (selected === i) {
+      return setSelected(null);
+    }
+    setSelected(i);
+  };
+
   return (
     <div>
-      {roomData.map((room) => (
-        <div className="roomCardContainer">
-          <div className="roomCardContainer__img">
-            <img src={room.picture} alt="room-img" />
+      {roomData.map((item, i) => (
+        <div
+          className="roomCardContainer"
+          key={i}
+          onClick={() => accordionToggle(i)}
+        >
+          <div className="roomCard">
+            <div className="roomCard__img">
+              <img src={item.picture} />
+            </div>
+            <div className="roomCardSummaryContainer">
+              <div
+                className={
+                  selected === i
+                    ? "roomCardSummary selected"
+                    : "roomCardSummary"
+                }
+              >
+                <h1 className="roomCardSummary__title">{item.title}</h1>
+                <h1 className="roomCardSummary__title">{item.subtitle}</h1>
+                <p className="roomCardSummary__description">
+                  {item.description1}
+                </p>
+                <p>
+                  <u>View Room Details & Enhancements</u>
+                </p>
+              </div>
+              <div className="roomCardCtaContainer">
+                <div className="roomCardCtaContainer__price">
+                  <p className="roomCardCtaContainer__largeFont">$1,230 AUD</p>
+                </div>
+                <div className="roomCardCtaContainer__bookNow">
+                  <p className="roomCardCtaContainer__largeFont">BOOK NOW</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="roomCardContainer__body">
-            <div className="cardBodyWrapper">
-              <h2 className="cardBodyWrapper__title">{room.title}</h2>
-              <h2 className="cardBodyWrapper__title">{room.subtitle}</h2>
-              <p className="cardBodyWrapper__Description">
-                {room.description1}
-              </p>
-              <p className="cardBodyWrapper__ViewDetail">
-                <u>View Room Details & Enhancements</u>
-              </p>
-            </div>
-            <div className="cardSummary">
-              <div className="cardPrice">
-                <p className="summaryFontLarge">$1,230 AUD</p>
-              </div>
-              <div className="cardBookingCta">
-                <p className="summaryFontLarge">BOOK NOW</p>
-              </div>
-            </div>
+          <div className="roomDetailView">
+            <div className="roomDetailSection"></div>
+            <div className="receiptSection"></div>
           </div>
         </div>
       ))}

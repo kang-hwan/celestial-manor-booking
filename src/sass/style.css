@@ -79,70 +79,93 @@
 
 .roomCardContainer {
   display: flex;
-  border: 1px solid #211f1a;
-  border-radius: 16px 16px 0px 16px;
+  flex-direction: column;
   width: 1041px;
-  height: 384px;
-  margin-bottom: 42px;
+  height: 381px;
+  margin-bottom: 40px;
 }
-.roomCardContainer:hover {
-  background-color: #211f1a;
-  color: white;
-  transition: 350ms;
-}
-.roomCardContainer__img {
-  width: 1000px;
-}
-.roomCardContainer__img img {
+
+.roomCard {
+  display: flex;
   width: 100%;
+  border: 1px solid #211f1a;
+  border-radius: 16px 16px 0 16px;
+}
+.roomCard__img {
+  width: 45%;
   height: 100%;
+}
+.roomCard__img img {
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+  height: 100%;
   border-radius: 15px 0 0 15px;
 }
-.roomCardContainer__body {
+.roomCard:hover .roomCardSummary {
+  background-color: rgb(196, 196, 196);
+  transition: 450ms;
+}
+
+.roomCardSummaryContainer {
+  width: 55%;
   display: flex;
   flex-direction: column;
 }
-.roomCardContainer__body .cardBodyWrapper {
+.roomCardSummaryContainer .roomCardSummary {
+  width: 100%;
   padding: 36px 46px 36px 24px;
   border-bottom: 1px solid #211f1a;
+  border-radius: 0 15px 0 0;
 }
-.roomCardContainer__body .cardBodyWrapper__title {
+.roomCardSummaryContainer .roomCardSummary__title {
   font-size: 32px;
   font-weight: 400;
-  margin: 0;
   line-height: 34px;
+  margin: 0;
 }
-.roomCardContainer__body .cardSummary {
-  display: flex;
-  align-items: center;
-  height: 100%;
+.roomCardSummaryContainer .roomCardSummary__description {
+  line-height: 180%;
 }
-.roomCardContainer__body .cardSummary .cardPrice {
-  border-right: 1px solid #211f1a;
-  background-image: url(../image/gradient-card.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 50%;
-  height: 100%;
-  text-align: center;
-}
-.roomCardContainer__body .cardSummary .cardBookingCta {
-  width: 50%;
-  height: 100%;
-  text-align: center;
+.roomCardSummaryContainer .roomCardSummary.selected {
+  background-color: #211f1a;
+  color: white;
+  transition: 450ms;
 }
 
-.summaryFontLarge {
-  font-size: 32px;
+.roomCardCtaContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.roomCardCtaContainer__price {
+  width: 50%;
+  height: 100%;
+  background-image: url(../image/gradient-card.png);
+  background-size: cover;
+  border-right: 1px solid #211f1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.roomCardCtaContainer__bookNow {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.roomCardCtaContainer__largeFont {
+  font-size: 28px;
   font-weight: 500;
   margin: 0;
 }
 
 header {
   display: flex;
-  width: 100%;
+  max-width: 1440px;
   height: 98px;
   margin-top: 24px;
 }
