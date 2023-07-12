@@ -21,7 +21,7 @@ function RoomCard() {
         >
           <div className="roomCard">
             <div className="roomCard__img">
-              <img src={item.picture} />
+              <img src={item.picture} alt="room-picture" />
             </div>
             <div className="roomCardSummaryContainer">
               <div
