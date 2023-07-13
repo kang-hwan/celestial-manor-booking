@@ -4,6 +4,10 @@ import DatePickerPage from "./pages/DatePickerPage";
 import GuestPickerPage from "./pages/GuestPickerPage";
 import RoomPickerPage from "./pages/RoomPickerPage";
 import "./sass/style.css";
+
+// TODO : Calendar DatePicker Restriction
+// TODO : Setup Redux
+
 function App() {
   return (
     <div className="App">
