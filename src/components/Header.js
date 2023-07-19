@@ -1,7 +1,12 @@
 import React from "react";
 import navLogo from "../image/navLogo.svg";
+import { useSelector } from "react-redux";
 
 function Header() {
+  // ! Visitor Counter
+  const adultCount = useSelector((state) => state.visitor.value.adults);
+  const childCount = useSelector((state) => state.visitor.value.children);
+
   return (
     <div className="headerWrapper">
       <header>
@@ -11,7 +16,9 @@ function Header() {
         <div className="navBar">
           <div className="navBar__item">
             <div>Adults & Children</div>
-            <div>2/0</div>
+            <div>
+              {adultCount} / {childCount}
+            </div>
           </div>
           <div className="navBar__item">
             <div>Dates of Stay</div>

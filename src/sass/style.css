@@ -165,40 +165,58 @@
 
 .roomDetailView {
   display: flex;
+  flex-direction: column;
   background-color: #d4d9cc;
   max-height: 0;
   overflow: hidden;
   padding: 0 20px 0 20px;
+  opacity: 0;
 }
 .roomDetailView.show {
   padding: 20px;
   height: auto;
   max-height: 9999px;
-  transition: 2000ms;
+  transition: 1000ms;
   overflow: visible;
+  opacity: 1;
 }
-.roomDetailView .roomDetailSection {
+
+.roomDetailView-closeWindow {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #211f1a;
+}
+
+.roomDetailView-body {
+  display: flex;
+  margin-top: 24px;
+}
+
+.roomDetailSection {
   width: 75%;
   padding: 12px 24px;
 }
-.roomDetailView .roomDetailSection-body {
+.roomDetailSection-body {
   text-align: center;
 }
-.roomDetailView .roomDetailSection-body__title {
-  margin: 0;
+.roomDetailSection-body__title {
+  margin: 32px 0;
   font-size: 36px;
   font-weight: 400;
   line-height: 44px;
 }
-.roomDetailView .roomDetailSection-body__description {
+.roomDetailSection-body__description {
   color: #000;
   text-align: center;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px; /* 175% */
+  margin: 32px 0;
 }
-.roomDetailView .roomDetailSection-body__roomSubheading {
+.roomDetailSection-body__roomSubheading {
   margin: 32px 0;
   color: #211f1a;
   font-size: 16px;
@@ -206,16 +224,43 @@
   font-weight: 400;
   line-height: 24px; /* 150% */
 }
-.roomDetailView .roomDetailSection-body__img {
+.roomDetailSection-body__img {
   border-radius: 16px;
   width: 100%;
 }
-.roomDetailView .roomDetailSection-body__img img {
+.roomDetailSection-body__img img {
   -o-object-fit: contain;
      object-fit: contain;
   width: 100%;
 }
-.roomDetailView .roomDetailSection-enhancements__title {
+.roomDetailSection-body__roomDimension {
+  display: flex;
+  margin: 32px 0;
+  justify-content: center;
+}
+.roomDetailSection-body__roomDimension div {
+  display: flex;
+  margin: 0 20px;
+}
+.roomDetailSection-body__roomDimension div img {
+  margin-right: 8px;
+}
+.roomDetailSection-body__roomDimension div p {
+  margin: 0;
+}
+.roomDetailSection-body__featuresContainer {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.roomDetailSection-body__featuresContainer div {
+  color: #211f1a;
+  font-size: 12px;
+  width: 25%;
+  line-height: 20px;
+}
+.roomDetailSection-enhancements__title {
   color: #211f1a;
   font-size: 36px;
   font-weight: 500;
@@ -223,22 +268,22 @@
   margin: 40px 0;
   border-bottom: 1px solid #211f1a;
 }
-.roomDetailView .roomDetailSection-enhancements__options {
+.roomDetailSection-enhancements__options {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
 }
-.roomDetailView .roomDetailSection-enhancements__options div {
+.roomDetailSection-enhancements__options div {
   width: 50%;
   padding: 8px;
 }
-.roomDetailView .roomDetailSection-enhancements__options div img {
+.roomDetailSection-enhancements__options div img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
 }
-.roomDetailView .roomDetailSection-enhancements__options div h3 {
+.roomDetailSection-enhancements__options div h3 {
   color: #211f1a;
   font-family: Poppins;
   font-size: 24px;
@@ -247,18 +292,19 @@
   line-height: 44px; /* 183.333% */
   margin: 0;
 }
-.roomDetailView .roomDetailSection-enhancements__options div p {
+.roomDetailSection-enhancements__options div p {
   margin: 8px 0;
 }
-.roomDetailView .roomDetailSection-enhancements__options div span:nth-of-type(1) {
+.roomDetailSection-enhancements__options div span:nth-of-type(1) {
   font-size: 48px;
 }
-.roomDetailView .roomDetailSection-enhancements__options div button {
+.roomDetailSection-enhancements__options div button {
   font-size: 16px;
   font-weight: 700;
   margin-top: 12px;
 }
-.roomDetailView .receiptSection {
+
+.receiptSection {
   background-color: #211f1a;
   color: white;
   padding: 20px;
@@ -266,17 +312,17 @@
   height: -moz-fit-content;
   height: fit-content;
   position: sticky;
-  top: 40px;
+  top: 20px;
 }
-.roomDetailView .receiptSection h3 {
+.receiptSection h3 {
   margin: 0 0 12px 0;
   font-size: 16px;
   font-weight: 600;
 }
-.roomDetailView .receiptSection p {
+.receiptSection p {
   margin: 0;
 }
-.roomDetailView .receiptSection button {
+.receiptSection button {
   margin-top: 28px;
   width: 100%;
 }

@@ -1,54 +1,51 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  adultDecrement,
+  adultIncrement,
+  childDecrement,
+  childIncrement,
+} from "../features/visitor";
 
 function GuestPickerPage() {
-  // adult counter
-  const [adult, setAdult] = useState(1);
-
-  const adultIncrement = () => {
-    setAdult(adult + 1);
-  };
-
-  const adultDecrement = () => {
-    if (adult > 1) {
-      setAdult(adult - 1);
-    }
-  };
-
-  //   children counter
-  const [children, setChildren] = useState(0);
-
-  const childrenIncrement = () => {
-    setChildren(children + 1);
-  };
-
-  const childrenDecrement = () => {
-    if (children > 0) {
-      setChildren(children - 1);
-    }
-  };
+  const adultCount = useSelector((state) => state.visitor.value.adults);
+  const childrenCount = useSelector((state) => state.visitor.value.children);
+  const dispatch = useDispatch();
 
   return (
     <div id="guestPickerPage">
       <h1 className="pageHeader">Guests & Rooms</h1>
       <div className="formField">
         <div className="guestCounterField">
-          <p>{adult} Adults</p>
+          <p>{adultCount} Adults</p>
           <div className="counterBtnContainer">
-            <button className="counterBtn" onClick={() => adultIncrement()}>
+            <button
+              className="counterBtn"
+              onClick={() => dispatch(adultIncrement())}
+            >
               +
             </button>
-            <button className="counterBtn" onClick={() => adultDecrement()}>
+            <button
+              className="counterBtn"
+              onClick={() => dispatch(adultDecrement())}
+            >
               -
             </button>
           </div>
         </div>
         <div className="guestCounterField">
-          <p>{children} Children</p>
+          <p>{childrenCount} Children</p>
           <div className="counterBtnContainer">
-            <button className="counterBtn" onClick={() => childrenIncrement()}>
+            <button
+              className="counterBtn"
+              onClick={() => dispatch(childIncrement())}
+            >
               +
             </button>
-            <button className="counterBtn" onClick={() => childrenDecrement()}>
+            <button
+              className="counterBtn"
+              onClick={() => dispatch(childDecrement())}
+            >
               -
             </button>
           </div>
