@@ -5,6 +5,7 @@ import DatePickerPage from "./pages/DatePickerPage";
 import GuestPickerPage from "./pages/GuestPickerPage";
 import RoomPickerPage from "./pages/RoomPickerPage";
 import "./sass/style.css";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 // TODO : Calendar DatePicker Restriction
 // TODO : Setup Redux
@@ -38,7 +39,13 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="stepFormContainer">{renderForm(stepForm)}</div>
+      <div className="stepFormContainer">
+        <TransitionGroup>
+          <CSSTransition key={stepForm} timeout={1500} classNames="fade">
+            {renderForm(stepForm)}
+          </CSSTransition>
+        </TransitionGroup>
+      </div>
       <Footer />
     </div>
   );
