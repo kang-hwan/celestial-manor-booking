@@ -6,10 +6,12 @@ import reportWebVitals from "./reportWebVitals";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import visitorReducer from "./features/visitor";
+import stepFormReducer from "./features/formStep";
 
 const store = configureStore({
   reducer: {
     visitor: visitorReducer,
+    stepForm: stepFormReducer,
   },
 });
 

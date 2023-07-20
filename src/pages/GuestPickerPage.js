@@ -6,6 +6,7 @@ import {
   childDecrement,
   childIncrement,
 } from "../features/visitor";
+import { nextStep } from "../features/formStep";
 
 function GuestPickerPage() {
   const adultCount = useSelector((state) => state.visitor.value.adults);
@@ -50,7 +51,12 @@ function GuestPickerPage() {
             </button>
           </div>
         </div>
-        <button className="btn-accent--fill ">update guest & rooms</button>
+        <button
+          className="btn-accent--fill "
+          onClick={() => dispatch(nextStep())}
+        >
+          update guest & rooms
+        </button>
       </div>
     </div>
   );

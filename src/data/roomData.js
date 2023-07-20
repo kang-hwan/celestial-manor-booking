@@ -7,7 +7,7 @@ export const roomData = [
     title: "Celestial Classic*",
     subtitle: "1 King Bed & River Views",
     description1:
-      "You get the bed all to yourself in our twin room. Same size as our double room, the twin room offers two comfortable single beds and plenty of space to relax",
+      "You get the bed all to yourself in our twin room. Same size as our double room, the twin room offers two comfortable single beds and plenty of space to relax.",
     description2:
       "Decorated with a colorful yet subtle decor, the twin room is perfectly fit for two people who travel together but prefer not to share the covers.",
     details: ["2 People", "15m2 / 161ft2"],
@@ -32,7 +32,7 @@ export const roomData = [
     title: "Celestial Classic*",
     subtitle: "1 King Bed & River Views",
     description1:
-      "You get the bed all to yourself in our twin room. Same size as our double room, the twin room offers two comfortable single beds and plenty of space to relax",
+      "You get the bed all to yourself in our twin room. Same size as our double room, the twin room offers two comfortable single beds and plenty of space to relax.",
     description2:
       "Decorated with a colorful yet subtle decor, the twin room is perfectly fit for two people who travel together but prefer not to share the covers.",
     details: ["2 People", "15m2 / 161ft2"],

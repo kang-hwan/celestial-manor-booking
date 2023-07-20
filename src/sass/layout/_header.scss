@@ -1,6 +1,12 @@
+.headerWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 header {
   display: flex;
-  max-width: 1440px;
+  width: 1440px;
   height: 98px;
   margin-top: 24px;
 }

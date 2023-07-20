@@ -8,10 +8,16 @@
 // ! Layout
 @use "./layout/header";
 @use "./layout/footer";
+@use "./layout/stepFormContainer";
 @use "./layout/GuestPickerPage";
 @use "./layout/DatePickerPage";
 @use "./layout/RoomPickerPage";
 
 body {
   background-color: #fffaf8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
 }

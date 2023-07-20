@@ -10,7 +10,7 @@ export const visitorSlice = createSlice({
   initialState: { value: initialStateValue },
   reducers: {
     adultIncrement: (state) => {
-      if (state.value.adults + state.value.children <= 7) {
+      if (state.value.adults + state.value.children < 8) {
         state.value.adults += 1;
       }
     },
@@ -20,7 +20,7 @@ export const visitorSlice = createSlice({
       }
     },
     childIncrement: (state) => {
-      if (state.value.adults + state.value.children <= 7) {
+      if (state.value.adults + state.value.children < 8) {
         state.value.children += 1;
       }
     },
