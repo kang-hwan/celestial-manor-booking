@@ -7,6 +7,13 @@ function Header() {
   const adultCount = useSelector((state) => state.visitor.value.adults);
   const childCount = useSelector((state) => state.visitor.value.children);
 
+  // ! Length of Stay
+  const startDate = useSelector((state) => state.lengthOfStay.value.startDate);
+  const endDate = useSelector((state) => state.lengthOfStay.value.endDate);
+  const totalNights = useSelector(
+    (state) => state.lengthOfStay.value.totalNights
+  );
+
   return (
     <div className="headerWrapper">
       <header>
@@ -22,7 +29,12 @@ function Header() {
           </div>
           <div className="navBar__item">
             <div>Dates of Stay</div>
-            <div>Select</div>
+            <div>
+              {startDate} - {endDate}
+            </div>
+            <div>
+              {totalNights} Nights {totalNights + 1} days
+            </div>
           </div>
           <div className="navBar__item">
             <div>Accommodations</div>

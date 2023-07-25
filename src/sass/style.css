@@ -399,6 +399,11 @@ footer {
   opacity: 0;
 }
 
+.fade-enter-done {
+  transform: none;
+  transition: none;
+}
+
 .fade-enter-active {
   opacity: 1;
   transition: opacity 1500ms;

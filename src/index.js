@@ -7,11 +7,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import visitorReducer from "./features/visitor";
 import stepFormReducer from "./features/formStep";
+import lengthOfStayReducer from "./features/lengthOfStay";
 
 const store = configureStore({
   reducer: {
     visitor: visitorReducer,
     stepForm: stepFormReducer,
+    lengthOfStay: lengthOfStayReducer,
   },
 });
 

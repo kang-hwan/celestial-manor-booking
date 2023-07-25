@@ -3,6 +3,7 @@ import { roomData } from "../data/roomData";
 import enhancementsImg01 from "../image/enhancementImg-01.png";
 import elipse from "../image/roomDetails-elipse.svg";
 import closeBtn from "../image/closeButton.svg";
+import { v4 as uuidv4 } from "uuid";
 
 function RoomCard() {
   const [selected, setSelected] = useState(null);
@@ -75,7 +76,7 @@ function RoomCard() {
                   </h1>
                   <div className="roomDetailSection-body__roomDimension">
                     {item.details.map((details) => (
-                      <div>
+                      <div key={uuidv4()}>
                         <img src={elipse} alt="elipse" />
                         <p>{details}</p>
                       </div>
@@ -91,7 +92,7 @@ function RoomCard() {
                   </h1>
                   <div className="roomDetailSection-body__featuresContainer">
                     {item.amenities.map((features) => (
-                      <div>{features}</div>
+                      <div key={uuidv4()}>{features}</div>
                     ))}
                   </div>
                 </div>
