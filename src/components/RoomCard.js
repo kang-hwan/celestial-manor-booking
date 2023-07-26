@@ -4,15 +4,28 @@ import enhancementsImg01 from "../image/enhancementImg-01.png";
 import elipse from "../image/roomDetails-elipse.svg";
 import closeBtn from "../image/closeButton.svg";
 import { v4 as uuidv4 } from "uuid";
+import { useDispatch, useSelector } from "react-redux";
+import { updateRoom } from "../features/roomSelection";
 
 function RoomCard() {
   const [selected, setSelected] = useState(null);
+  const numberOfNights = useSelector(
+    (state) => state.lengthOfStay.value.totalNights
+  );
+
+  // Turn on and off accordion section to display extend information of each rooms.
+  const dispatch = useDispatch();
+
+  // const selectedItemTitle = selected !== null ? roomData[selected].title : "-";
 
   const accordionToggle = (i) => {
     if (selected === i) {
-      return setSelected(null);
+      setSelected(null);
+      dispatch(updateRoom("Select")); // when no room is selected, dispatch "-"
+    } else {
+      setSelected(i);
+      dispatch(updateRoom(roomData[i].title)); // dispatching the selected room's title
     }
-    setSelected(i);
   };
 
   return (
@@ -42,7 +55,9 @@ function RoomCard() {
               </div>
               <div className="roomCardCtaContainer">
                 <div className="roomCardCtaContainer__price">
-                  <p className="roomCardCtaContainer__largeFont">$1,230 AUD</p>
+                  <p className="roomCardCtaContainer__largeFont">
+                    ${item.pricePerNight * numberOfNights} AUD
+                  </p>
                 </div>
                 <div className="roomCardCtaContainer__bookNow">
                   <p className="roomCardCtaContainer__largeFont">BOOK NOW</p>
@@ -107,7 +122,10 @@ function RoomCard() {
                         alt="enhancements-breakfast"
                       />
                       <h3>Breakfast</h3>
-                      <p>Start the day with a delicious breakfast</p>
+                      <p>
+                        Per Person Per Night <br />
+                        Start the day with a delicious breakfast
+                      </p>
                       <span>$80</span>
                       <span>per person</span>
                       <button className="btn-primary">add enhancement</button>
@@ -152,8 +170,10 @@ function RoomCard() {
               </div>
               <div className="receiptSection">
                 <h3>Current Rate Selection</h3>
-                <p>Room Only - Add Breakfast - Flexible Details</p>
-                <p>$615 AUD x 2 Nights</p>
+                <p>{item.title}</p>
+                <p>
+                  ${item.pricePerNight} AUD x {numberOfNights} Nights
+                </p>
                 <button className="btn-accent--fill">
                   add room & checkout
                 </button>

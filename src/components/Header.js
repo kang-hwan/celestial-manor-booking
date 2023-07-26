@@ -14,6 +14,11 @@ function Header() {
     (state) => state.lengthOfStay.value.totalNights
   );
 
+  // ! Selected Room
+  const selectedRoom = useSelector(
+    (state) => state.roomSelection.value.selectedRoom
+  );
+
   return (
     <div className="headerWrapper">
       <header>
@@ -33,12 +38,12 @@ function Header() {
               {startDate} - {endDate}
             </div>
             <div>
-              {totalNights} Nights {totalNights + 1} days
+              {totalNights} Nights {totalNights + 1} Days
             </div>
           </div>
           <div className="navBar__item">
             <div>Accommodations</div>
-            <div>Select</div>
+            <div>{selectedRoom}</div>
           </div>
           <div className="navBar__item">
             <div>Total Price</div>

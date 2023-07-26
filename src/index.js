@@ -8,12 +8,14 @@ import { Provider } from "react-redux";
 import visitorReducer from "./features/visitor";
 import stepFormReducer from "./features/formStep";
 import lengthOfStayReducer from "./features/lengthOfStay";
+import roomSelectionReducer from "./features/roomSelection";
 
 const store = configureStore({
   reducer: {
     visitor: visitorReducer,
     stepForm: stepFormReducer,
     lengthOfStay: lengthOfStayReducer,
+    roomSelection: roomSelectionReducer,
   },
 });
 
