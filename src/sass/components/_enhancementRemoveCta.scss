@@ -1,0 +1,15 @@
+.enhancementRemoveCta {
+  height: 72px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__added {
+    color: #007205;
+    font-weight: 400;
+    width: 200px;
+  }
+  &__ctaBtn {
+    width: 50%;
+  }
+}

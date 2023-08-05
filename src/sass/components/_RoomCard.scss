@@ -54,6 +54,13 @@
       line-height: 180%;
     }
 
+    &__details {
+      display: flex;
+      p {
+        margin: 0 20px 0 0;
+      }
+    }
+
     &.selected {
       background-color: #211f1a;
       color: white;
@@ -232,6 +239,7 @@
           font-size: 16px;
           font-weight: 700;
           margin-top: 12px;
+          width: 100%;
         }
       }
     }
@@ -247,10 +255,27 @@
   margin-left: 24px;
   border-radius: 12px;
   height: fit-content;
-  position: sticky;
-  top: 20px;
+  display: flex;
+  flex-direction: column;
+  &__roomRate {
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    div:nth-last-of-type(1) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__enhancementRate {
+    border-bottom: 1px solid white;
+    padding: 20px 0;
+  }
+  &__totalRate {
+    padding: 20px 0;
+  }
   h3 {
-    margin: 0 0 12px 0;
+    margin: 12px 0 12px 0;
     font-size: 16px;
     font-weight: 600;
   }

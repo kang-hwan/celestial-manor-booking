@@ -4,6 +4,8 @@
 
 // ! Components
 @use "./components/RoomCard";
+@use "./components/ReceiptEnhancements";
+@use "./components/enhancementRemoveCta";
 
 // ! Layout
 @use "./layout/header";
@@ -14,6 +16,7 @@
 @use "./layout/RoomPickerPage";
 
 body {
+  color: #211f1a;
   background-color: #fffaf8;
   display: flex;
   flex-direction: column;

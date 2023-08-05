@@ -16,7 +16,11 @@ function Header() {
 
   // ! Selected Room
   const selectedRoom = useSelector(
-    (state) => state.roomSelection.value.selectedRoom
+    (state) => state.receiptTotal.value[0].selectedRoom
+  );
+
+  const totalPrice = useSelector(
+    (state) => state.receiptTotal.value[5].totalPrice
   );
 
   return (
@@ -47,7 +51,7 @@ function Header() {
           </div>
           <div className="navBar__item">
             <div>Total Price</div>
-            <div>0.00 AUD</div>
+            <div>{totalPrice} AUD</div>
           </div>
         </div>
       </header>

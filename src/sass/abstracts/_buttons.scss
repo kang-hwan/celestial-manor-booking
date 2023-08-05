@@ -1,3 +1,4 @@
+// Primary Button
 .btn-primary {
   padding: 16px 32px;
   border: 2px solid #211f1a;
@@ -10,9 +11,11 @@
   &:hover {
     background: #211f1a;
     color: white;
+    transition: 200ms;
   }
 }
 
+// Accent Button
 .btn-accent {
   padding: 16px 32px;
   border: 2px solid #294c12;
@@ -40,6 +43,7 @@
   font-weight: 500;
 }
 
+// Secondary Button
 .btn-secondary {
   padding: 16px 32px;
   border: 2px solid rgba(33, 31, 26, 0.6);
@@ -56,18 +60,19 @@
   }
 }
 
+// Negative Button
 .btn-negative {
   padding: 16px 32px;
   border: 2px solid #ff2f2f;
   color: #ff2f2f;
   border-radius: 8px;
   text-transform: uppercase;
-  background-color: white;
+  background-color: transparent;
   font-weight: 500;
   gap: 18px;
 
   &:hover {
-    background: #ff2f2f;
-    color: white;
+    background: rgba(255, 47, 47, 0.5);
+    transition: 200ms;
   }
 }

@@ -1,30 +1,64 @@
 import React, { useState } from "react";
+
+// ! Components
+import ReceiptEnhancements from "./ReceiptEnhancements";
+
+// ! Assets
 import { roomData } from "../data/roomData";
 import enhancementsImg01 from "../image/enhancementImg-01.png";
-import elipse from "../image/roomDetails-elipse.svg";
 import closeBtn from "../image/closeButton.svg";
+
+// ! Library
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
-import { updateRoom } from "../features/roomSelection";
 
+// ! Reducers
+import {
+  addBreakfast,
+  addLateCheckOut,
+  addParking,
+  addSpecialSurprise,
+  removeBreakfast,
+  removeLateCheckOut,
+  removeParking,
+  removeSpecialSurprise,
+  selectRoom,
+  selectedRoomTotalPrice,
+} from "../features/receiptTotal";
+import EnhancementRemoveCta from "./EnhancementRemoveCta";
+
+// ------------------------------------------------------------------------
 function RoomCard() {
   const [selected, setSelected] = useState(null);
+
+  const totalVisitors = useSelector(
+    (state) => state.visitor.value.adults + state.visitor.value.children
+  );
   const numberOfNights = useSelector(
     (state) => state.lengthOfStay.value.totalNights
   );
 
-  // Turn on and off accordion section to display extend information of each rooms.
-  const dispatch = useDispatch();
+  const breakfastData = useSelector((state) => state.receiptTotal.value[1]);
+  const surpriseData = useSelector((state) => state.receiptTotal.value[2]);
+  const lateCheckOutData = useSelector((state) => state.receiptTotal.value[3]);
+  const parkingData = useSelector((state) => state.receiptTotal.value[4]);
+  const totalPrice = useSelector(
+    (state) => state.receiptTotal.value[5].totalPrice
+  );
 
-  // const selectedItemTitle = selected !== null ? roomData[selected].title : "-";
+  const dispatch = useDispatch();
 
   const accordionToggle = (i) => {
     if (selected === i) {
       setSelected(null);
-      dispatch(updateRoom("Select")); // when no room is selected, dispatch "-"
+      dispatch(selectRoom("Select"));
+      dispatch(selectedRoomTotalPrice(0));
     } else {
       setSelected(i);
-      dispatch(updateRoom(roomData[i].title)); // dispatching the selected room's title
+      dispatch(selectRoom(roomData[i].title));
+      dispatch(
+        selectedRoomTotalPrice(roomData[i].pricePerNight * numberOfNights)
+      );
     }
   };
 
@@ -49,6 +83,13 @@ function RoomCard() {
                 <p className="roomCardSummary__description">
                   {item.description1}
                 </p>
+                {/* <div className="roomCardSummary__details">
+                  {item.details.map((details) => (
+                    <div key={uuidv4()}>
+                      <p>+ {details}</p>
+                    </div>
+                  ))}
+                </div> */}
                 <p>
                   <u>View Room Details & Enhancements</u>
                 </p>
@@ -92,8 +133,7 @@ function RoomCard() {
                   <div className="roomDetailSection-body__roomDimension">
                     {item.details.map((details) => (
                       <div key={uuidv4()}>
-                        <img src={elipse} alt="elipse" />
-                        <p>{details}</p>
+                        <p>+ {details}</p>
                       </div>
                     ))}
                   </div>
@@ -126,9 +166,28 @@ function RoomCard() {
                         Per Person Per Night <br />
                         Start the day with a delicious breakfast
                       </p>
-                      <span>$80</span>
+                      <span>${breakfastData.unitPrice}</span>
                       <span>per person</span>
-                      <button className="btn-primary">add enhancement</button>
+                      {breakfastData.isAdded ? (
+                        <EnhancementRemoveCta
+                          removeReducer={() => dispatch(removeBreakfast())}
+                        />
+                      ) : (
+                        <button
+                          className="btn-primary"
+                          onClick={() =>
+                            dispatch(
+                              addBreakfast(
+                                breakfastData.unitPrice *
+                                  totalVisitors *
+                                  numberOfNights
+                              )
+                            )
+                          }
+                        >
+                          add enhancement
+                        </button>
+                      )}
                     </div>
                     <div>
                       <img
@@ -140,9 +199,24 @@ function RoomCard() {
                         Surprise your companion with a bottle of Spumante,
                         delicious...
                       </p>
-                      <span>$100</span>
+                      <span>${surpriseData.unitPrice}</span>
                       <span>per bottle</span>
-                      <button className="btn-primary">add enhancement</button>
+                      {surpriseData.isAdded ? (
+                        <EnhancementRemoveCta
+                          removeReducer={() =>
+                            dispatch(removeSpecialSurprise())
+                          }
+                        />
+                      ) : (
+                        <button
+                          className="btn-primary"
+                          onClick={() =>
+                            dispatch(addSpecialSurprise(surpriseData.unitPrice))
+                          }
+                        >
+                          add enhancement
+                        </button>
+                      )}
                     </div>
                     <div>
                       <img
@@ -151,8 +225,23 @@ function RoomCard() {
                       />
                       <h3>Late Check-Out</h3>
                       <p>Sleep long and postpone your check-out until 1pm.</p>
-                      <span>$80</span>
-                      <button className="btn-primary">add enhancement</button>
+                      <span>${lateCheckOutData.unitPrice}</span>
+                      {lateCheckOutData.isAdded ? (
+                        <EnhancementRemoveCta
+                          removeReducer={() => dispatch(removeLateCheckOut())}
+                        />
+                      ) : (
+                        <button
+                          className="btn-primary"
+                          onClick={() =>
+                            dispatch(
+                              addLateCheckOut(lateCheckOutData.unitPrice)
+                            )
+                          }
+                        >
+                          add enhancement
+                        </button>
+                      )}
                     </div>
                     <div>
                       <img src={enhancementsImg01} alt="enhancements-Parking" />
@@ -161,22 +250,46 @@ function RoomCard() {
                         Secure parking garage with surveillance 150m from the
                         hotel.
                       </p>
-                      <span>$80</span>
+                      <span>${parkingData.unitPrice}</span>
                       <span>per night</span>
-                      <button className="btn-primary">add enhancement</button>
+                      {parkingData.isAdded ? (
+                        <EnhancementRemoveCta
+                          removeReducer={() => dispatch(removeParking())}
+                        />
+                      ) : (
+                        <button
+                          className="btn-primary"
+                          onClick={() =>
+                            dispatch(
+                              addParking(parkingData.unitPrice * numberOfNights)
+                            )
+                          }
+                        >
+                          add enhancement
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
               </div>
               <div className="receiptSection">
-                <h3>Current Rate Selection</h3>
-                <p>{item.title}</p>
-                <p>
-                  ${item.pricePerNight} AUD x {numberOfNights} Nights
-                </p>
-                <button className="btn-accent--fill">
-                  add room & checkout
-                </button>
+                <div className="receiptSection__roomRate">
+                  <h3>Current Rate Selection</h3>
+                  <div>{item.title}</div>
+                  <div>{item.subtitle}</div>
+                  <div>
+                    <div>{numberOfNights} Nights</div>
+                    <div>{item.pricePerNight * numberOfNights} AUD</div>
+                  </div>
+                </div>
+                <div className="receiptSection__enhancementRate">
+                  <h3>Enhancements</h3>
+                  <ReceiptEnhancements />
+                </div>
+                <div className="receiptSection__totalRate">
+                  <p>TOTAL: ${totalPrice} AUD</p>
+                </div>
+                <button className="btn-accent--fill">confirm & checkout</button>
               </div>
             </div>
           </div>

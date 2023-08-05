@@ -1,0 +1,13 @@
+.enhancementAddOnContainer {
+  margin-bottom: 12px;
+  &__qtySubtotal {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__removeCta {
+    color: #ff5f5f;
+    u {
+      cursor: pointer;
+    }
+  }
+}

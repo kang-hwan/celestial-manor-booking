@@ -19,6 +19,7 @@
 .btn-primary:hover {
   background: #211f1a;
   color: white;
+  transition: 200ms;
 }
 
 .btn-accent {
@@ -68,13 +69,13 @@
   color: #ff2f2f;
   border-radius: 8px;
   text-transform: uppercase;
-  background-color: white;
+  background-color: transparent;
   font-weight: 500;
   gap: 18px;
 }
 .btn-negative:hover {
-  background: #ff2f2f;
-  color: white;
+  background: rgba(255, 47, 47, 0.5);
+  transition: 200ms;
 }
 
 .roomCardContainer {
@@ -126,6 +127,12 @@
 }
 .roomCardSummaryContainer .roomCardSummary__description {
   line-height: 180%;
+}
+.roomCardSummaryContainer .roomCardSummary__details {
+  display: flex;
+}
+.roomCardSummaryContainer .roomCardSummary__details p {
+  margin: 0 20px 0 0;
 }
 .roomCardSummaryContainer .roomCardSummary.selected {
   background-color: #211f1a;
@@ -300,6 +307,7 @@
   font-size: 16px;
   font-weight: 700;
   margin-top: 12px;
+  width: 100%;
 }
 
 .receiptSection {
@@ -312,11 +320,28 @@
   border-radius: 12px;
   height: -moz-fit-content;
   height: fit-content;
-  position: sticky;
-  top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.receiptSection__roomRate {
+  border-bottom: 1px solid white;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.receiptSection__roomRate div:nth-last-of-type(1) {
+  display: flex;
+  justify-content: space-between;
+}
+.receiptSection__enhancementRate {
+  border-bottom: 1px solid white;
+  padding: 20px 0;
+}
+.receiptSection__totalRate {
+  padding: 20px 0;
 }
 .receiptSection h3 {
-  margin: 0 0 12px 0;
+  margin: 12px 0 12px 0;
   font-size: 16px;
   font-weight: 600;
 }
@@ -326,6 +351,36 @@
 .receiptSection button {
   margin-top: 28px;
   width: 100%;
+}
+
+.enhancementAddOnContainer {
+  margin-bottom: 12px;
+}
+.enhancementAddOnContainer__qtySubtotal {
+  display: flex;
+  justify-content: space-between;
+}
+.enhancementAddOnContainer__removeCta {
+  color: #ff5f5f;
+}
+.enhancementAddOnContainer__removeCta u {
+  cursor: pointer;
+}
+
+.enhancementRemoveCta {
+  height: 72px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.enhancementRemoveCta__added {
+  color: #007205;
+  font-weight: 400;
+  width: 200px;
+}
+.enhancementRemoveCta__ctaBtn {
+  width: 50%;
 }
 
 .headerWrapper {
@@ -383,7 +438,6 @@ footer {
 .footerWrapper__ctaContainer {
   display: flex;
   justify-content: space-between;
-  width: 400px;
 }
 .footerWrapper__ctaContainer button {
   background: none;
@@ -480,6 +534,7 @@ footer {
 }
 
 body {
+  color: #211f1a;
   background-color: #fffaf8;
   display: flex;
   flex-direction: column;

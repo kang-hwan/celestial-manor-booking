@@ -9,6 +9,20 @@ import visitorReducer from "./features/visitor";
 import stepFormReducer from "./features/formStep";
 import lengthOfStayReducer from "./features/lengthOfStay";
 import roomSelectionReducer from "./features/roomSelection";
+import breakfastAddOnReducer from "./features/addBreakfast";
+import surpriseAddOnReducer from "./features/addSpecialSurprise";
+import lateCheckOutAddOnReducer from "./features/addLateCheckOut";
+import parkingAddOnReducer from "./features/addParking";
+import enhancementSubtotalReducer from "./features/enhancementSubtotal";
+import receiptTotalReducer from "./features/receiptTotal";
+// import cartTotalReducer from "./features/cartTotal";
+
+// TODO: Calendar Restriction
+// TODO: Fix Add Enhancement Conditional Rendering
+// TODO: Styling on BOOK NOW button when card selected
+// TODO: Update images
+// TODO: Last personal detail section
+// TODO: Stepper animation on header
 
 const store = configureStore({
   reducer: {
@@ -16,6 +30,12 @@ const store = configureStore({
     stepForm: stepFormReducer,
     lengthOfStay: lengthOfStayReducer,
     roomSelection: roomSelectionReducer,
+    breakfastAddOn: breakfastAddOnReducer,
+    surpriseAddOn: surpriseAddOnReducer,
+    lateCheckOutAddOn: lateCheckOutAddOnReducer,
+    parkingAddOn: parkingAddOnReducer,
+    enhancementSubtotal: enhancementSubtotalReducer,
+    receiptTotal: receiptTotalReducer,
   },
 });
 
