@@ -23,6 +23,7 @@ import {
   removeParking,
   removeSpecialSurprise,
   selectRoom,
+  selectRoomIndex,
   selectedRoomTotalPrice,
 } from "../features/receiptTotal";
 import EnhancementRemoveCta from "./EnhancementRemoveCta";
@@ -57,6 +58,7 @@ function RoomCard() {
     } else {
       setSelected(i);
       dispatch(selectRoom(roomData[i].title));
+      dispatch(selectRoomIndex(i));
       dispatch(
         selectedRoomTotalPrice(roomData[i].pricePerNight * numberOfNights)
       );

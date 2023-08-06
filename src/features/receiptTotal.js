@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialStateValue = [
   {
     selectedRoom: "Select",
+    roomIndex: null,
     unitPrice: 0,
     subtotal: 0,
   },
@@ -42,6 +43,9 @@ export const receiptTotalSlice = createSlice({
     // ! Room Reducers
     selectRoom: (state, action) => {
       state.value[0].selectedRoom = action.payload;
+    },
+    selectRoomIndex: (state, action) => {
+      state.value[0].roomIndex = action.payload;
     },
     selectedRoomUnitPrice: (state, action) => {
       state.value[0].unitPrice = action.payload;
@@ -111,6 +115,7 @@ const calculateTotalPrice = (state) => {
 
 export const {
   selectRoom,
+  selectRoomIndex,
   selectedRoomUnitPrice,
   selectedRoomTotalPrice,
   addBreakfast,

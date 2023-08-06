@@ -570,15 +570,30 @@ footer {
   display: flex;
   justify-content: center;
 }
-#checkOutPage #checkOutPageContainer {
+#checkOutPage .checkOutPageContainer {
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
   width: 1200px;
+  height: 1000px;
+  border: 1px solid red;
 }
-#checkOutPage #checkOutPageContainer-roomDetailSection {
+#checkOutPage .checkOutPageContainer-roomDetailSection {
   width: 35%;
-  background-color: aqua;
+  padding: 12px;
+  border: 1px solid blue;
+}
+#checkOutPage .checkOutPageContainer-roomDetailSection img {
+  width: 100%;
+}
+#checkOutPage .checkOutPageContainer-guestInfoSection {
+  width: 35%;
+  padding: 12px;
+  border: 1px solid green;
+}
+#checkOutPage .checkOutPageContainer-receiptSection {
+  width: 30%;
+  padding: 12px;
 }
 
 body {

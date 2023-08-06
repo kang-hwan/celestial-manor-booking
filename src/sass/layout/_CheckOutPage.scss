@@ -1,14 +1,30 @@
 #checkOutPage {
   display: flex;
   justify-content: center;
-  #checkOutPageContainer {
+  .checkOutPageContainer {
     margin-top: 60px;
     display: flex;
     justify-content: space-between;
     width: 1200px;
+    height: 1000px;
+    border: 1px solid red;
     &-roomDetailSection {
       width: 35%;
-      background-color: aqua;
+      padding: 12px;
+      border: 1px solid blue;
+      img {
+        width: 100%;
+      }
+    }
+    &-guestInfoSection {
+      width: 35%;
+      padding: 12px;
+
+      border: 1px solid green;
+    }
+    &-receiptSection {
+      width: 30%;
+      padding: 12px;
     }
   }
 }
