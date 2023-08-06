@@ -6,9 +6,7 @@ import GuestPickerPage from "./pages/GuestPickerPage";
 import RoomPickerPage from "./pages/RoomPickerPage";
 import "./sass/style.css";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-
-// TODO : Calendar DatePicker Restriction
-// TODO : Setup Redux
+import CheckOutPage from "./pages/CheckOutPage";
 
 function App() {
   const stepForm = useSelector((state) => state.stepForm.value);
@@ -27,6 +25,10 @@ function App() {
 
       case 3:
         page = <RoomPickerPage />;
+        break;
+
+      case 4:
+        page = <CheckOutPage />;
         break;
 
       default:

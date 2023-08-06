@@ -1,3 +1,12 @@
+@keyframes gradientFade {
+  from {
+    background-position: 300% 0;
+  }
+  to {
+    background-position: 20% 0;
+  }
+}
+
 .headerWrapper {
   width: 100%;
   display: flex;
@@ -21,6 +30,7 @@ header {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   width: 100%;
+
   &__item {
     display: flex;
     flex-direction: column;
@@ -29,7 +39,14 @@ header {
     padding-top: 12px;
     padding-bottom: 24px;
     div:nth-child(2) {
-      font-size: 24px;
+      font-size: 24px; // For input details
+    }
+    &.current {
+      background-image: url(../image/gradient-card.png);
+      // background-size: cover;
+      background-repeat: no-repeat;
+      background-size: 150% 100%; /* Adjust this if needed */
+      animation: gradientFade 1200ms forwards;
     }
   }
 }

@@ -34,10 +34,29 @@ function DatePickerPage() {
     const startDateDM = extractDateAndMonth(startDate);
     const endDateDM = extractDateAndMonth(endDate);
 
-    dispatch(updateStartDate(startDateDM));
-    dispatch(updateEndDate(endDateDM));
-    dispatch(updateTotalNights(calculateDateDifference()));
-    dispatch(nextStep());
+    if (startDate && endDate) {
+      dispatch(updateStartDate(startDateDM));
+      dispatch(updateEndDate(endDateDM));
+      dispatch(updateTotalNights(calculateDateDifference()));
+      dispatch(nextStep());
+    } else {
+      alert("Please select both start and end dates.");
+    }
+  };
+
+  const tomorrow = () => {
+    const today = new Date();
+    today.setDate(today.getDate() + 1);
+    return today.toISOString().split("T")[0];
+  };
+
+  const maxEndDate = () => {
+    if (startDate) {
+      const start = new Date(startDate);
+      start.setDate(start.getDate() + 28);
+      return start.toISOString().split("T")[0];
+    }
+    return null;
   };
 
   return (
@@ -47,11 +66,16 @@ function DatePickerPage() {
         <input
           className="datePicker"
           type="date"
+          min={tomorrow()}
           onChange={(e) => setStartDate(e.target.value)}
         />
         <input
           className="datePicker"
           type="date"
+          min={
+            startDate ? new Date(startDate).toISOString().split("T")[0] : null
+          }
+          max={maxEndDate()}
           onChange={(e) => setEndDate(e.target.value)}
         />
         <button

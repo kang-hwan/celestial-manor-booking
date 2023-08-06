@@ -3,6 +3,8 @@ import navLogo from "../image/navLogo.svg";
 import { useSelector } from "react-redux";
 
 function Header() {
+  const currentStep = useSelector((state) => state.stepForm.value);
+
   // ! Visitor Counter
   const adultCount = useSelector((state) => state.visitor.value.adults);
   const childCount = useSelector((state) => state.visitor.value.children);
@@ -30,13 +32,21 @@ function Header() {
           <img src={navLogo} alt="headerLogo" />
         </div>
         <div className="navBar">
-          <div className="navBar__item">
+          <div
+            className={
+              currentStep === 1 ? "navBar__item current" : "navBar__item"
+            }
+          >
             <div>Adults & Children</div>
             <div>
               {adultCount} / {childCount}
             </div>
           </div>
-          <div className="navBar__item">
+          <div
+            className={
+              currentStep === 2 ? "navBar__item current" : "navBar__item"
+            }
+          >
             <div>Dates of Stay</div>
             <div>
               {startDate} - {endDate}
@@ -45,11 +55,19 @@ function Header() {
               {totalNights} Nights {totalNights + 1} Days
             </div>
           </div>
-          <div className="navBar__item">
+          <div
+            className={
+              currentStep === 3 ? "navBar__item current" : "navBar__item"
+            }
+          >
             <div>Accommodations</div>
             <div>{selectedRoom}</div>
           </div>
-          <div className="navBar__item">
+          <div
+            className={
+              currentStep === 4 ? "navBar__item current" : "navBar__item"
+            }
+          >
             <div>Total Price</div>
             <div>{totalPrice} AUD</div>
           </div>

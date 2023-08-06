@@ -1,0 +1,14 @@
+#checkOutPage {
+  display: flex;
+  justify-content: center;
+  #checkOutPageContainer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    &-roomDetailSection {
+      width: 35%;
+      background-color: aqua;
+    }
+  }
+}

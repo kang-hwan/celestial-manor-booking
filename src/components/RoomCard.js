@@ -26,6 +26,7 @@ import {
   selectedRoomTotalPrice,
 } from "../features/receiptTotal";
 import EnhancementRemoveCta from "./EnhancementRemoveCta";
+import { nextStep } from "../features/formStep";
 
 // ------------------------------------------------------------------------
 function RoomCard() {
@@ -100,7 +101,13 @@ function RoomCard() {
                     ${item.pricePerNight * numberOfNights} AUD
                   </p>
                 </div>
-                <div className="roomCardCtaContainer__bookNow">
+                <div
+                  className={
+                    selected === i
+                      ? "roomCardCtaContainer__bookNow selected"
+                      : "roomCardCtaContainer__bookNow"
+                  }
+                >
                   <p className="roomCardCtaContainer__largeFont">BOOK NOW</p>
                 </div>
               </div>
@@ -289,7 +296,12 @@ function RoomCard() {
                 <div className="receiptSection__totalRate">
                   <p>TOTAL: ${totalPrice} AUD</p>
                 </div>
-                <button className="btn-accent--fill">confirm & checkout</button>
+                <button
+                  className="btn-accent--fill"
+                  onClick={() => dispatch(nextStep())}
+                >
+                  confirm & checkout
+                </button>
               </div>
             </div>
           </div>
