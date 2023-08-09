@@ -1,6 +1,6 @@
 import React from "react";
 import { roomData } from "../data/roomData";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import ReceiptEnhancements from "../components/ReceiptEnhancements";
 
 export default function CheckOutPage() {
