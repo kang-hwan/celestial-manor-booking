@@ -112,6 +112,8 @@
 .roomCard__img img {
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   width: 100%;
   height: 100%;
   border-radius: 15px 0 0 0;
@@ -434,6 +436,15 @@ header {
   border-bottom: 1px solid black;
   width: 100%;
 }
+.navBar > div:nth-child(1) {
+  border-right: 1px solid black;
+}
+.navBar > div:nth-child(2) {
+  border-right: 1px solid black;
+}
+.navBar > div:nth-child(3) {
+  border-right: 1px solid black;
+}
 .navBar__item {
   display: flex;
   flex-direction: column;
@@ -570,30 +581,78 @@ footer {
   display: flex;
   justify-content: center;
 }
-#checkOutPage .checkOutPageContainer {
-  margin-top: 60px;
+#checkOutPage .checkOutPageWrapper {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+}
+#checkOutPage .checkOutPageWrapper__title {
+  text-align: center;
+}
+#checkOutPage .checkOutPageWrapper__title .pageHeader.final {
+  margin-bottom: 0;
+}
+#checkOutPage .checkOutPageContainer {
+  display: flex;
   width: 1200px;
-  height: 1000px;
-  border: 1px solid red;
+  height: 900px;
 }
 #checkOutPage .checkOutPageContainer-roomDetailSection {
   width: 35%;
-  padding: 12px;
-  border: 1px solid blue;
+  padding: 24px;
+}
+#checkOutPage .checkOutPageContainer-roomDetailSection h3 {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #211f1a;
 }
 #checkOutPage .checkOutPageContainer-roomDetailSection img {
   width: 100%;
+  height: 484px;
+  border-radius: 12px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #checkOutPage .checkOutPageContainer-guestInfoSection {
   width: 35%;
-  padding: 12px;
-  border: 1px solid green;
+  padding: 24px;
+}
+#checkOutPage .checkOutPageContainer-guestInfoSection h3 {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #211f1a;
+}
+#checkOutPage .checkOutPageContainer-guestInfoSection form label {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+#checkOutPage .checkOutPageContainer-guestInfoSection form input {
+  width: 100%;
+  padding: 12px 32px 12px 16px;
+  border: 1px solid #211f1a;
+  border-radius: 8px;
+  background-color: transparent;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+#checkOutPage .checkOutPageContainer-guestInfoSection form textarea {
+  min-width: 100%;
+  max-width: 100%;
+  padding: 12px 32px 12px 16px;
+  border: 1px solid #211f1a;
+  border-radius: 8px;
+  background-color: transparent;
+  margin-bottom: 8px;
+  font-weight: 500;
 }
 #checkOutPage .checkOutPageContainer-receiptSection {
   width: 30%;
   padding: 12px;
+}
+
+.receiptSection.final {
+  width: 30%;
+  margin: 40px 24px 24px 24px;
 }
 
 body {

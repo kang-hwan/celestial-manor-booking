@@ -51,9 +51,6 @@ function Header() {
             <div>
               {startDate} - {endDate}
             </div>
-            <div>
-              {totalNights} Nights {totalNights + 1} Days
-            </div>
           </div>
           <div
             className={

@@ -30,7 +30,15 @@ header {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   width: 100%;
-
+  > div:nth-child(1) {
+    border-right: 1px solid black;
+  }
+  > div:nth-child(2) {
+    border-right: 1px solid black;
+  }
+  > div:nth-child(3) {
+    border-right: 1px solid black;
+  }
   &__item {
     display: flex;
     flex-direction: column;

@@ -18,6 +18,10 @@ import receiptTotalReducer from "./features/receiptTotal";
 // TODO: Last personal detail section
 // TODO: Fix Add Enhancement Conditional Rendering
 // TODO: Update images
+// TODO: header clickable steps
+// TODO: fix card image size
+
+// ? Receipt Section Enhancement Qty
 
 const store = configureStore({
   reducer: {
