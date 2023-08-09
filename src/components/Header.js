@@ -12,9 +12,6 @@ function Header() {
   // ! Length of Stay
   const startDate = useSelector((state) => state.lengthOfStay.value.startDate);
   const endDate = useSelector((state) => state.lengthOfStay.value.endDate);
-  const totalNights = useSelector(
-    (state) => state.lengthOfStay.value.totalNights
-  );
 
   // ! Selected Room
   const selectedRoom = useSelector(

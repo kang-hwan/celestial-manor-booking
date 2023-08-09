@@ -17,8 +17,6 @@ export default function CheckOutPage() {
 
   const selectedRoom = roomData[selectedRoomIndex];
 
-  const dispatch = useDispatch();
-
   return (
     <div id="checkOutPage">
       <div className="checkOutPageWrapper">
