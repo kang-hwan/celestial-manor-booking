@@ -5,7 +5,6 @@ import ReceiptEnhancements from "./ReceiptEnhancements";
 
 // ! Assets
 import { roomData } from "../data/roomData";
-import enhancementsImg01 from "../image/enhancementImg-01.png";
 import imgBreakfast from "../image/enhancement-breakfast.png";
 import imgSpecialSurprise from "../image/enhancement-specialSurprise.png";
 import imgLateCheckOut from "../image/enhancement-lateCheckOut.png";
