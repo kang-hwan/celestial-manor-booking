@@ -85,7 +85,8 @@ export default function CheckOutPage() {
               <ReceiptEnhancements />
             </div>
             <div className="receiptSection__totalRate">
-              <p>TOTAL: ${totalPrice} AUD</p>
+              <div>TOTAL:</div>
+              <div> ${totalPrice} AUD</div>
             </div>
             <button className="btn-accent--fill">confirm & checkout</button>
           </div>

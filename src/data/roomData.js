@@ -1,9 +1,14 @@
 import roomImage01 from "../image/roomCardImage-01.png";
+import roomClassic01 from "../image/roomMainImg-classic01.png";
+import roomClassic02 from "../image/roomMainImg-classic02.png";
+import roomDeluxe01 from "../image/roomMainImg-deluxe01.png";
+import roomDeluxe02 from "../image/roomMainImg-deluxe02.png";
+import roomSuite02 from "../image/roomMainImg-suite02.png";
 
 export const roomData = [
   {
     name: "Classic",
-    picture: roomImage01,
+    picture: roomClassic01,
     title: "Celestial Classic*",
     subtitle: "1 King Bed & River Views",
     description1:
@@ -29,7 +34,7 @@ export const roomData = [
   },
   {
     name: "Classic",
-    picture: roomImage01,
+    picture: roomClassic02,
     title: "Celestial Classic*",
     subtitle: "1 King Bed - Accessible Room",
     description1:
@@ -55,7 +60,7 @@ export const roomData = [
   },
   {
     name: "Deluxe",
-    picture: roomImage01,
+    picture: roomDeluxe01,
     title: "Celestial Deluxe*",
     subtitle: "1 King Super - City View",
     description1:
@@ -81,7 +86,7 @@ export const roomData = [
   },
   {
     name: "Deluxe",
-    picture: roomImage01,
+    picture: roomDeluxe02,
     title: "Celestial Deluxe*",
     subtitle: "1 King Super - Corner Room",
     description1:
@@ -111,7 +116,7 @@ export const roomData = [
     title: "Celestial Suite*",
     subtitle: "2 King Super - River View",
     description1:
-      "Relax in your luxurious 74sqm corner suite offering majestic views over Yarra River. Enjoy a separate living room, luxury French amenities and exclusive Club Manor breakfast, le gouter & apero chic.",
+      "Relax in your luxurious 74sqm corner suite offering majestic views over Yarra River. Enjoy a separate living room, luxury French amenities and exclusive Club Manor breakfast.",
     description2:
       "Decorated with a colorful yet subtle decor, the twin room is perfectly fit for two people who travel together but prefer not to share the covers.",
     pricePerNight: 3200,
@@ -133,11 +138,11 @@ export const roomData = [
   },
   {
     name: "Suite",
-    picture: roomImage01,
+    picture: roomSuite02,
     title: "Celestial Suite*",
     subtitle: "2 King Super - Top Floor",
     description1:
-      "Relax in your luxurious 112sqm corner suite offering majestic views over Yarra River. Enjoy a separate living room, luxury French amenities and exclusive Club Manor breakfast, le gouter & apero chic.",
+      "Relax in your luxurious 112sqm corner suite offering majestic views over Yarra River. Enjoy a separate living room, luxury French amenities and exclusive Club Manor breakfast.",
     description2:
       "Decorated with a colorful yet subtle decor, the twin room is perfectly fit for two people who travel together but prefer not to share the covers.",
     pricePerNight: 4200,

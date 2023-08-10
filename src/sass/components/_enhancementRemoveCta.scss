@@ -1,13 +1,17 @@
 .enhancementRemoveCta {
   height: 72px;
-  width: 100%;
+  min-width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  margin: 0;
+  padding: 0;
   &__added {
     color: #007205;
-    font-weight: 400;
-    width: 200px;
+    font-weight: 500;
+    width: 50%;
+    text-align: center;
+    margin-top: 12px;
   }
   &__ctaBtn {
     width: 50%;

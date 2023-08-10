@@ -53,7 +53,7 @@
     }
 
     &__description {
-      line-height: 180%;
+      line-height: 150%;
     }
 
     &__details {
@@ -280,6 +280,8 @@
   }
   &__totalRate {
     padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
   }
   h3 {
     margin: 12px 0 12px 0;

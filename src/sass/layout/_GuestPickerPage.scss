@@ -26,5 +26,13 @@
 .counterBtn {
   background-color: transparent;
   border: none;
+  width: 32px;
   font-size: 20px;
+  border-radius: 50%;
+  transition: 150ms;
+  &:active {
+    background-color: #211f1a;
+    color: white;
+    border-radius: 50%;
+  }
 }

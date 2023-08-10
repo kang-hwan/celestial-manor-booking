@@ -15,11 +15,13 @@ import receiptTotalReducer from "./features/receiptTotal";
 //-- TODO: Stepper animation on header
 //-- TODO: Styling on BOOK NOW button when card selected
 //-- TODO: Calendar Restriction
-// TODO: Last personal detail section
-// TODO: Fix Add Enhancement Conditional Rendering
-// TODO: Update images
-// TODO: header clickable steps
-// TODO: fix card image size
+//-- TODO: Last personal detail section
+//-- TODO: fix card image size
+//-- TODO: Update images
+//-- TODO: Fix Add Enhancement Conditional Rendering
+// TODO: Scroll Event
+// TODO: Fill button fix
+// ! 보류 TODO: header clickable steps
 
 // ? Receipt Section Enhancement Qty
 

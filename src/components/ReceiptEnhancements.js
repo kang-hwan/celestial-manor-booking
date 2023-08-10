@@ -53,7 +53,7 @@ export default function ReceiptEnhancements() {
             {surpriseData.enhancement}
           </div>
           <div className="enhancementAddOnContainer__qtySubtotal">
-            <div>{numberOfNights} Nights</div>
+            <div></div>
             <div>{surpriseData.unitPrice} AUD</div>
           </div>
           <div className="enhancementAddOnContainer__removeCta">
@@ -72,7 +72,7 @@ export default function ReceiptEnhancements() {
             {lateCheckOutData.enhancement}
           </div>
           <div className="enhancementAddOnContainer__qtySubtotal">
-            <div>{numberOfNights} Nights</div>
+            <div></div>
             <div>{lateCheckOutData.unitPrice} AUD</div>
           </div>
           <div className="enhancementAddOnContainer__removeCta">

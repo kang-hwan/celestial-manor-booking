@@ -6,6 +6,10 @@ import ReceiptEnhancements from "./ReceiptEnhancements";
 // ! Assets
 import { roomData } from "../data/roomData";
 import enhancementsImg01 from "../image/enhancementImg-01.png";
+import imgBreakfast from "../image/enhancement-breakfast.png";
+import imgSpecialSurprise from "../image/enhancement-specialSurprise.png";
+import imgLateCheckOut from "../image/enhancement-lateCheckOut.png";
+import imgParking from "../image/enhancement-parking.png";
 import closeBtn from "../image/closeButton.svg";
 
 // ! Library
@@ -166,13 +170,10 @@ function RoomCard() {
                   </h1>
                   <div className="roomDetailSection-enhancements__options">
                     <div>
-                      <img
-                        src={enhancementsImg01}
-                        alt="enhancements-breakfast"
-                      />
+                      <img src={imgBreakfast} alt="enhancements-breakfast" />
                       <h3>Breakfast</h3>
                       <p>
-                        Per Person Per Night <br />
+                        Per Person <br />
                         Start the day with a delicious breakfast
                       </p>
                       <span>${breakfastData.unitPrice}</span>
@@ -200,7 +201,7 @@ function RoomCard() {
                     </div>
                     <div>
                       <img
-                        src={enhancementsImg01}
+                        src={imgSpecialSurprise}
                         alt="enhancements-specialSurprise"
                       />
                       <h3>Special Surprise</h3>
@@ -229,7 +230,7 @@ function RoomCard() {
                     </div>
                     <div>
                       <img
-                        src={enhancementsImg01}
+                        src={imgLateCheckOut}
                         alt="enhancements-lateCheckOut"
                       />
                       <h3>Late Check-Out</h3>
@@ -253,7 +254,7 @@ function RoomCard() {
                       )}
                     </div>
                     <div>
-                      <img src={enhancementsImg01} alt="enhancements-Parking" />
+                      <img src={imgParking} alt="enhancements-Parking" />
                       <h3>Parking</h3>
                       <p>
                         Secure parking garage with surveillance 150m from the
@@ -296,7 +297,8 @@ function RoomCard() {
                   <ReceiptEnhancements />
                 </div>
                 <div className="receiptSection__totalRate">
-                  <p>TOTAL: ${totalPrice} AUD</p>
+                  <div>TOTAL:</div>
+                  <div> ${totalPrice} AUD</div>
                 </div>
                 <button
                   className="btn-accent--fill"
