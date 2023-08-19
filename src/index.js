@@ -11,6 +11,8 @@ import lengthOfStayReducer from "./features/lengthOfStay";
 import roomSelectionReducer from "./features/roomSelection";
 import enhancementSubtotalReducer from "./features/enhancementSubtotal";
 import receiptTotalReducer from "./features/receiptTotal";
+import guestInfoReducer from "./features/guestInfo";
+import confirmCheckOutReducer from "./features/confirmCheckOut";
 
 //-- TODO: Stepper animation on header
 //-- TODO: Styling on BOOK NOW button when card selected
@@ -19,8 +21,10 @@ import receiptTotalReducer from "./features/receiptTotal";
 //-- TODO: fix card image size
 //-- TODO: Update images
 //-- TODO: Fix Add Enhancement Conditional Rendering
+//-- TODO: Fill button fix
 // TODO: Scroll Event
-// TODO: Fill button fix
+// TODO: Price Comma
+// TODO: Final Confirmation PopUp
 // ! 보류 TODO: header clickable steps
 
 // ? Receipt Section Enhancement Qty
@@ -33,6 +37,8 @@ const store = configureStore({
     roomSelection: roomSelectionReducer,
     enhancementSubtotal: enhancementSubtotalReducer,
     receiptTotal: receiptTotalReducer,
+    guestInfo: guestInfoReducer,
+    confirmCheckOut: confirmCheckOutReducer,
   },
 });
 

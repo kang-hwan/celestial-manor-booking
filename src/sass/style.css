@@ -55,12 +55,14 @@
   cursor: pointer;
 }
 .btn-accent--fill:hover {
-  background-color: rgba(41, 76, 18, 0.5);
+  background-color: #94a689;
   color: #294c12;
+  transition: 200ms;
 }
 .btn-accent--fill:active {
   background-color: transparent;
   color: #294c12;
+  transition: 200ms;
 }
 
 .btn-secondary {
@@ -77,6 +79,7 @@
 .btn-secondary:hover {
   background: rgba(33, 31, 26, 0.6);
   color: white;
+  transition: 200ms;
 }
 
 .btn-negative {
@@ -97,6 +100,7 @@
 .btn-negative:active {
   background-color: #ff2f2f;
   color: white;
+  transition: 200ms;
 }
 
 .roomCardContainer {
@@ -416,6 +420,70 @@
 }
 .enhancementRemoveCta__ctaBtn {
   width: 50%;
+}
+
+.confirmationPopUpSection {
+  visibility: hidden;
+}
+.confirmationPopUpSection.confirmed {
+  visibility: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: 500ms;
+}
+.confirmationPopUpSection-container {
+  width: 40%;
+  padding: 80px 20px 40px;
+  border-radius: 16px;
+  background: #fffcfa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.confirmationPopUpSection-container__body {
+  background-image: url(../image/gradient-card.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  border-top: 1px solid #211f1a;
+  border-bottom: 1px solid #211f1a;
+  position: relative;
+}
+.confirmationPopUpSection-container__body::after {
+  width: 16px;
+  height: 16px;
+  background-color: #211f1a;
+  position: absolute;
+  bottom: -8px;
+  left: calc(50% - 8px);
+  rotate: 45deg;
+  content: "";
+}
+.confirmationPopUpSection-container__body h2 {
+  font-weight: 500;
+}
+.confirmationPopUpSection-container__body h1 {
+  font-weight: 500;
+}
+.confirmationPopUpSection-container__footer {
+  padding-top: 20px;
+}
+.confirmationPopUpSection-container__footer a {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #211f1a;
 }
 
 @keyframes gradientFade {

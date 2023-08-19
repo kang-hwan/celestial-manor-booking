@@ -297,7 +297,7 @@ function RoomCard() {
                 </div>
                 <div className="receiptSection__totalRate">
                   <div>TOTAL:</div>
-                  <div> ${totalPrice} AUD</div>
+                  <div> {totalPrice} AUD</div>
                 </div>
                 <button
                   className="btn-accent--fill"
